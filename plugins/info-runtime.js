@@ -1,54 +1,58 @@
+let moment = require('moment-timezone')
+let fs = require('fs')
+let fetch = require('node-fetch')
+let handler = async (m, { conn, command }) => {
 
-import fs from 'fs'
-import fetch from 'node-fetch'
-import moment from 'moment-timezone'
-let handler = async (m, { conn, args, command }) => {
-let _muptime
-if (process.send) {
-process.send('uptime')
-_muptime = await new Promise(resolve => {
-process.once('message', resolve)
-setTimeout(resolve, 1000)
-}) * 1000
+let user = global.db.data.users[m.sender]
+let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+let name = m.fromMe ? conn.user : conn.contacts[who]
+var pushname2 = `*${name.vnmae || name.notify || name.name || ('+' + name.jid.split`@`[0])}*`
+
+function kyun(seconds){
+function pad(s){
+return (s < 10 ? '0' : '') + s;
 }
-let muptime = clockString(_muptime)
-       let tag = `@${m.sender.replace(/@.+/, '')}`
-  let mentionedJid = [m.sender]
-    let flaa = `${pickRandom(fla)}` + muptime
-  let rtt = await(await fetch(flaa)).buffer()
- conn.sendButtonDoc(m.chat, `𝑩𝒐𝒕 𝑼𝒑𝒕𝒊𝒎𝒆`, muptime + '\n\n', 'MENU', '.menu', ftoko, { contextInfo: { forwardingScore: fsizedoc, externalAdReply: { body: 'Tes', containsAutoReply: true, mediaType: 1, mediaUrl: hwaifu.getRandom(),  renderLargerThumbnail: true, showAdAttribution: true, sourceId: 'Tes', sourceType: 'PDF', previewType: 'PDF', sourceUrl: sgc, thumbnail: rtt, thumbnailUrl: sgc, title: 'Mʏ Uᴘ Tɪᴍᴇ'}}})
+var hours = Math.floor(seconds / (60*60));
+var minutes = Math.floor(seconds % (60*60) / 60);
+var seconds = Math.floor(seconds % 60);
+
+//return pad(hours) + ':' + pad(minutes) + ':' + pad(seconds)
+return `${pad(hours)}Jam ${pad(minutes)}Menit ${pad(seconds)}Detik`
+}
+var runtime = process.uptime()
+					var teks = `The.sad.boy01 ×͜×`p
+					var run = `${kyun(runtime)}`
+					var itsme = `0@s.whatsapp.net`
+					var split = `teks`
+					const ftrol = {
+	key : {
+                          participant : '0@s.whatsapp.net'
+                        },
+       message: {
+                    orderMessage: {
+                            itemCount : 999,
+                            status: 1,
+                            surface : 1,
+                            message: `${teks}\n${run}`,
+                            orderTitle: `${teks}\n${run}`,
+                            thumbnail: fs.readFileSync('./src/logo.jpg'), //Gambarnye
+                            sellerJid: '0@s.whatsapp.net' 
+                          }
+                        }
+                      }
+					//m.reply(teks)
+					let jawab = `*Bot aktif selama*\n${run}\n\n` + wm .trim()
+conn.reply(m.chat, jawab, wm, {quoted: ftrol})
 }
 handler.help = ['runtime']
 handler.tags = ['info']
-handler.command = ['runtime', 'rt']
+handler.command = /^(uptime|runtime)$/i
 
-export default handler
-
-
-function ucapan() {
-  const time = moment.tz('Asia/Jakarta').format('HH')
-  let res = "Sudah Dini Hari Kok Belum Tidur Kak? 🥱"
-  if (time >= 4) {
-    res = "Pagi Lord 🌄"
-  }
-  if (time >= 10) {
-    res = "Selamat Siang Kak ☀️"
-  }
-  if (time >= 15) {
-    res = "Selamat Sore Kak 🌇"
-  }
-  if (time >= 18) {
-    res = "Malam Kak 🌙"
-  }
-  return res
-}
-function pickRandom(list) {
-return list[Math.floor(Math.random() * list.length)]
-}
+module.exports = handler
 
 function clockString(ms) {
-let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
-let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
-let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
-return [h, ' H ', m, ' M ', s, ' S '].map(v => v.toString().padStart(2, 0)).join('')
+    let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
+    let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
+    let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
+    return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
 }
