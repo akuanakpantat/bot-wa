@@ -1,104 +1,109 @@
-import fetch from 'node-fetch' 
-import moment from 'moment-timezone'
- let handler = async(m, { conn, usedPrefix, args, command }) => { 
-     let name = db.data.users[m.sender].name 
- let fload = {
-    key : {
-    remoteJid: 'status@broadcast',
-    participant : '0@s.whatsapp.net'
+let handler = async (m, { conn }) => {
+	//-----PRICE
+//sewa
+let sh = '5'
+let sn = '15'
+let ss = '20'
+let sp = '35'
+let sv = '40'
+//premium
+let ph = '5'
+let pn = '15'
+let pp = '25'
+let pv = '35'
+let ppm = '35'
+//jasa run
+let ri = '25'
+let pk = '30'
+let info = `
+╭━━━━「 *SEWA* 」
+┊⫹⫺ *Hemat:* _${sh}k/grup (7 Hari)_
+┊⫹⫺ *Normal:* _${sn}k/grup (1 bulan)_                                         
+┊⫹⫺ *permanen:* = _${sv}k/grup (unlimited)_
+╰═┅═━––––––๑
+
+╭━━━━「 *PREMIUM* 」
+┊⫹⫺ *Hemat:* _${ph}k (7 Hari)_
+┊⫹⫺ *Normal:* _${pn}k (1 bulan)_                                       
+┊⫹⫺ *Permanent:* = _${ppm}k (Unlimited)_
+╰═┅═━––––––๑
+╭━━━━「 *PERPANJANG SEWA* 」
+┊⫹⫺ *Hemat:* _3k (7 Hari)_
+┊⫹⫺ *Normal:* _6k (1 bulan)_                                       
+╰═┅═━––––––๑
+╭━━━━「 *PERPANJANG PREMIUM* 」
+┊⫹⫺ *Hemat:* _3k (7 Hari)_
+┊⫹⫺ *Normal:* _6k (1 bulan)_                                       
+╰═┅═━––––––๑
+╭━━━━「 *JASARUN* 」
+┊⫹⫺ *Hemat:* _${ri}k (7 Hari)_
+┊⫹⫺ *Normal:* _${pk}k (1 bulan)_                                       
+╰═┅═━––––––๑
+༅ _*FITUR BOT*
+
+✧ *Virtex Menu✅*
+✧ *Menu Keren✅*
+✧ *Anti Link✅*
+✧ *Button Menu✅*
+✧ *Anti Sticker✅*
+✧ *Anti Toxic↗️*
+✧ *DLL*
+✧ *MEMBELI BERATI SETUJU*
+
+_Total Fitur:_ 570++
+
+*⫹⫺ PAYMENT:*
+• *Dana:*
+• *Gopay:*
+• *Ovo:*
+• *QRIS*
+• *ALL PAYMENT*
+–––––– *🐾 Kebijakan* ––––––
+🗣️: Kak, Kok harganya mahal banget?
+💬: Mau tawar menawar? boleh, silahkan chat owner aja
+
+🗣️: Scam ga nih kak?
+💬: Enggalah, Owner 100% Tepati janji #STAYHALAL
+
+▌│█║▌║▌║║▌║▌║█│▌
+`
+const sections = [
+   {
+	title: `${htjava} SEWA ✦-------`,
+	rows: [
+	    {title: "🔖 HEMAT", rowId: '.order *Paket:* 5K • Sewa', description: 'PRICE: ' + sh + 'k (7 Hari)' },
+	    {title: "🔖 NORMAL", rowId: '.order *Paket:* 10K • Sewa', description: 'PRICE: ' + sn + 'k (1 bulan)' },
+	{title: "🔖 Permanen", rowId: '.order *Paket:* 40K • Sewa', description: 'PRICE: ' + sv + 'k (Permanen)' },
+	]
+    }, {
+    title: `${htjava} PREMIUM ✦-------`,
+	rows: [
+	    {title: "🌟 HEMAT", rowId: '.order *Paket:* 5K • Premium', description: 'PRICE: ' + ph + 'k (7 Hari)' },
+	    {title: "🌟 NORMAL", rowId: '.order *Paket:* 10K • Premium', description: 'PRICE: ' + pn + 'k (1 bulan)' },
+	{title: "🌟 PERMANENT", rowId: '.order *Paket:* 35K • Premium', description: 'PRICE: ' + ppm + 'k (UNLIMITED)' },
+	]
+    }, {
+        title: `${htjava} JASA RUN ✦-------`,
+	rows: [
+	    {title: "🌟 HEMAT", rowId: '.order *Paket:* 25K • Jasarun', description: 'PRICE: ' + ri + 'k (25 Hari)' },
+	    {title: "🌟 NORMAL", rowId: '.order *Paket:* 30K • Jasarun', description: 'PRICE: ' + pk + 'k (1 bulan)' },
+	]
     },
-    message: {
-    orderMessage: {
-    itemCount : 9998282719181899999,
-    status: 404,
-    surface : 404,
-    message: `${ucapan()}`,
-    orderTitle: `${ucapan()}`,
-    thumbnail:   await (await fetch(`https://i.ibb.co/jfZVKmC/babi2.jpg`)).buffer(),
-    sellerJid: '0@s.whatsapp.net' 
-    }
-    }
-    }
- let judul = ''
-  const sections = [ 
-                 { 
-                   "rows": [{ 
-                     "title": `Pemilik Bot`, 
-                     "description": "Nomor Pemilik Bot (owner)", 
-                     "rowId": `${usedPrefix}creator` 
-                   }, { 
-                     "title": "Syarat Ketentuan dan Peraturan", 
-                     "description": "Harap membaca Peraturan demi kenyamanan kita bersama", 
-                     "rowId": `${usedPrefix}donasi` 
-                   }, { 
-                     "title": `Group Official ${namebot} Bot`, 
-                     "description": "Gabung untuk mendapatkan informasi mengenai bot atau sekedar meramaikan", 
-                     "rowId": `${usedPrefix}gcbot` 
-                   }], 
-                   "title": "Informasi Bot" 
-                 }, { 
-                   "rows": [{ 
-                     "title": `Free Trial 1 Hari`, 
-                     "description": "Masukkan bot secara gratis selama 1 Hari", 
-                     "rowId": `${usedPrefix}join` 
-                     }], 
-                   "title": "────────「 Trial 」" 
-                 }, { 
-                     "rows": [{ 
-                       "title": `Permanent! Rp50.000`, 
-                       "description": "Masukkan bot ke dalam group tanpa batasann waktu!", 
-                       "rowId": ".masuk"
-                   }], 
-                     "title": "───────「 Permanent 」" 
-                 } 
-               ]
-         const listMessage = {
-      text: `*❏ SEWA BOT*
-Untuk fitur bot bisa baca menu sampai selesai ya kak, dicoba coba dulu biar tau ( Ketik *.menu* )
-Silahkan hubungi owner ( Ketik *.owner* ) jika ingin menyewa bot untuk grup chat kalian
+]
 
-➠ Sewa (Join Grup) harga 50K / Permanent dan apabila bot di kick dari grup sengaja atau tidak sengaja tidak bisa di join kan lagi (Hangus).
-➠ Pembayaran saat ini hanya tersedia via Qris.
-➠ Proses transaksi seperti pada umumnya, chat owner terlebih dahulu untuk menanyakan nomor tujuan transfer setelah itu screenshot bukti pembayaran.
-➠ *Penting!* simpan nomor owner dan join ke dalam grup official dibawah untuk mengetahui update nomor bot terbaru apabila ter-banned.
-➠ Bot bisa di pindah pin
-dah Grup (berlaku untuk yang sewa) kedalam grup lain (hanya 1 grup)
-➠ Maaf untuk yang sudah Transfer tidak dapat di Refund/dibatalkan
-➠ Membeli/Sewa berarti Setuju dalam Persyaratan tersebut`,
-      footer: wm,
-      mentions: await conn.parseMention(judul),
-      title: judul.trim(),
-      buttonText: "Click Here",
-      sections
-    }
-    return conn.sendMessage(m.chat, listMessage, { quoted: fload, mentions: await conn.parseMention(judul), contextInfo: { externalAdReply :{ 
-     showAdAttribution: true, 
-      }} 
-   })
-    
-    }
-handler.command = /^(sewabot|sewa|belibot|buyprem)$/i
-
-export default handler 
-
-function ucapan() {
-    let res = ''
-  const time = moment.tz('Asia/Jakarta').format('HH')
-  res = ('Hi')
-  if (time >= 0) {
-    res = ('Selamat Malam🌃')
-  }
-  if (time >= 4) {
-    res = ('Selamat Pagi🌄')
-  }
-  if (time >= 12) {
-    res = ('Selamat Siang☀️')
-  }
-  if (time >= 16) {
-    res = ('️ Selamat Malam🌇')
-  }
-  if (time >= 23) {
-    res = ('Selamat Malam🌙')
-  }
-  return res
+const listMessage = {
+  text: info,
+  footer: botdate,
+  title: wm,
+  buttonText: "Click Here!",
+  sections
 }
+await conn.sendMessage(m.chat, listMessage)
+//conn.sendHydrated(m.chat, info, wm, null, sgc, "🌎 Group Official", null,null, [['Owner','.owner']], m)
+}
+
+handler.help = ['sewa', 'premium']
+handler.tags = ['main']
+handler.command = /^(sewa(bot)?|premium)$/i
+
+export default handler
