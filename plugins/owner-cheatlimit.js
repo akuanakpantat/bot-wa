@@ -1,20 +1,13 @@
-let handler  = async (m, { conn, usedPrefix: _p }) => {
-let info = `
-=> global.db.data.users[m.sender].limit = 1000000
-`.trim()
-
-conn.fakeReply(m.chat, info, '0@s.whatsapp.net', '*SUKSES CHEAT LIMIT*', 'status@broadcast')
+let handler = async (m, { conn }) => {
+    let user = global.db.data.users[m.sender]
+        conn.reply(m.chat, `*Succes Cheat !*`, m)
+        global.db.data.users[m.sender].money = Infinity
+        global.db.data.users[m.sender].limit = Infinity
+        global.db.data.users[m.sender].level = 100
+        global.db.data.users[m.sender].exp = Infinity 
 }
-handler.command = /^(cheatlimit)$/i
-handler.owner = false
-handler.mods = false
-handler.premium = true
-handler.group = false
-handler.private = false
+handler.command = /^(curang)$/i
 
-handler.admin = false
-handler.botAdmin = false
+handler.mods = true
 
-handler.fail = null
-
-export default handler 
+export default handler
