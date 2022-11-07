@@ -1,7 +1,7 @@
 import fs from 'fs'
 import fetch from 'node-fetch'
 let handler  = async (m, { conn, usedPrefix: _p }) => {
-    let info = fs.readFileSync('./mp3/soundultah.mp3')
+    let info = fs.readFileSync('./mp3/NexBotz.mp3')
 
 let td = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
 
@@ -14,7 +14,7 @@ conn.reply(m.chat, info, m, {},{ contextInfo: { externalAdReply: { showAdAttribu
     thumbnail: thumb,
     sourceUrl: sig  }}})
 }
-handler.command = ['soundultah']
-handler.help = ['soundultah']
+handler.command = ['NexBotz']
+handler.help = ['NexBotz']
 
 export default handler
