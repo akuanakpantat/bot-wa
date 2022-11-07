@@ -2,17 +2,14 @@ let handler = async (m, { conn }) => {
 let info = `
 *${htki} CHEAT ${htka}*
 
-Anjay nge cheat awkwk:v
+Ada Ada saja kamu mas bro😁.
 `
 const sections = [
    {
 	title: `✃ CHEAT MENU`,
 	rows: [
-	    {title: "🌀Cheat Money", rowId: '.cheatuang', description: 'Unlimited Money' },
-	    {title: "🌀Cheat Exp", rowId: '.cheatexp', description: 'Rawan Eror bang' },
-	{title: "🌀Cheat Limit", rowId: '.cheatlimit', description: 'Unlimited Limit' },
-	{title: "🌀Cheat Level", rowId: '.cheatlevel', description: 'Unlimited Level' },
-	{title: "🌀Cheat Anti Pmo", rowId: '.antipmo', description: 'Anti Pmo banh' },
+	    {title: "🌀Cheat All", rowId: '.curang', description: 'Unlimited Money' },
+	    {title: "🌀Ingin Uang? Join Grup", rowId: '.gcbot', description: 'Rawan Eror bang' },
 	]
     }, 
 
