@@ -12,7 +12,6 @@
 	{title: "🌟 | PremNsfwChat", rowId: `${usedPrefix + command} premnsfwchat`},
 	{title: "🔗 | Antilink", rowId: `${usedPrefix + command} antilink`},
 	{title: "🚫 | Antidelete", rowId: `${usedPrefix + command} antidelete`},
-	{title: "📛 | Antitoxic", rowId: `${usedPrefix + command} antitoxic`},
 	{title: "🌟 | Antilinkwa", rowId: `${usedPrefix + command} antilinkwa`}, 
 	{title: "🌟 | AntilinkIg", rowId: `${usedPrefix + command} antilinkIg`}, 
     {title: "🌟 | AntilinkYt", rowId: `${usedPrefix + command} antilinkyt`}, 
