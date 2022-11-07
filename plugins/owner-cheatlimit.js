@@ -1,6 +1,6 @@
 let handler  = async (m, { conn, usedPrefix: _p }) => {
 let info = `
-=> global.db.data.users[m.sender].limit = Infinity
+=> global.db.data.users[m.sender].limit = 1000000
 `.trim()
 
 conn.fakeReply(m.chat, info, '0@s.whatsapp.net', '*SUKSES CHEAT LIMIT*', 'status@broadcast')
