@@ -44,20 +44,20 @@ global.ppulsa2 = '-'
 global.psaweria = '-'
 
 /*============== NOMOR ==============*/
-global.nomorbot = '6288221354110'
-global.nomorown = '628812743180'
+global.nomorbot = '6285600881911'
+global.nomorown = '6285607806470'
 global.namebot = 'NexBotz'
-global.nameown = 'NexEp'
+global.nameown = 'RamaADW'
 
 
 /*============== STAFF ==============*/
 global.owner = [
-  ['628812743180', 'NexEp', 'true']
+  ['6285607806470', 'RamaADW', 'true']
   // [number, dia creator/owner?, dia developer?]
 ] // Put your number here
 global.mods = [] // Want some help?
 global.prems = [] // Premium user bukan disini nambahinnya, ketik .addprem @user 10
-
+.addprem @6285607806470 100
 
 /*============== API ==============*/
 global.APIs = { // API Prefix
@@ -81,7 +81,7 @@ adiisus: 'https://adiixyzapi.herokuapp.com',
   kanx: 'https://kannxapi.herokuapp.com/'
 }
 global.APIKeys = { // APIKey Here
-  // 'https://website': 'apikey'
+  // 'https://website': 'yntkts'
   'https://api.xteam.xyz': 'cristian9407',
   'https://anabotofc.herokuapp.com/': 'AnaBot',
   'https://api.lolhuman.xyz': 'Xynoz',
@@ -108,7 +108,7 @@ global.wm3 = 'NexBotz | By NexEp'
 global.botdate = `⻝ 𝗗𝗮𝘁𝗲: ${week} ${date}\n⻝ 𝗧𝗶𝗺𝗲: ${wktuwib}`
 global.bottime = `⻝ 𝗧 𝗜 𝗠 𝗘 : ${wktuwib}`
 global.titlebot = `NexBotz | ʙʏ ${global.nameown}`
-global.author = 'NexEp' 
+global.author = 'RamaADW' 
 global.packname = 'NexEp'
 global.danied = '✘ 𝗘𝗥𝗢𝗥 𝟰𝟬𝟰'
 global.ultahowner = 'November 4 2022'
